@@ -1,14 +1,31 @@
-🚀 Python for Robotics: Foundation & Data Analytics
+<div align="center">
+  <h1>🚀 Python for Robotics: Foundation & Data Analytics</h1>
+  <p style="font-size:1.05rem; color:#444; max-width:740px; margin:auto;">
+    A polished portfolio of Python practice work from a 90-Day Robotics Challenge, built to showcase core algorithms, vectorized sensor processing, and engineering-grade data visualization.
+  </p>
+  <p>
+    <img alt="Python" src="https://img.shields.io/badge/Python-3.11-blue?style=for-the-badge&logo=python" />
+    <img alt="NumPy" src="https://img.shields.io/badge/NumPy-Scientific-orange?style=for-the-badge&logo=numpy" />
+    <img alt="Matplotlib" src="https://img.shields.io/badge/Matplotlib-Visualization-purple?style=for-the-badge&logo=matplotlib" />
+    <img alt="Robotics" src="https://img.shields.io/badge/Robotics-Data%20Analytics-teal?style=for-the-badge&logo=robotframework" />
+  </p>
+</div>
 
-📌 Overview
+---
 
-Welcome to my Python practice repository. This project serves as a foundational sandbox developed during a 90-Day Robotics Challenge. It documents the progression from core object-oriented programming concepts to the advanced data manipulation and visualization techniques required for autonomous systems and hardware telemetry analysis.
+## 📌 Overview
 
-The repository is structured logically, starting with basic algorithmic logic and scaling up to processing simulated hardware noise and visualizing 2D occupancy grids.
+This repository is a structured Python sandbox created during a 90-Day Robotics Challenge. It captures the progression from fundamental Python and OOP to advanced sensor data processing and engineering visualization for autonomous systems.
 
-🗂️ Project Architecture
+---
 
-📂 python_practice/
+## 🗂️ Project Architecture
+
+<details>
+<summary><strong>Expand the file tree</strong></summary>
+
+```text
+python_practice/
 │
 ├── 📁 Root/                            # Core Python Fundamentals
 │   ├── Bank_account.py                 # OOP: Classes, Methods, State Management
@@ -26,54 +43,65 @@ The repository is structured logically, starting with basic algorithmic logic an
 │   ├── matplotlib_tutorial.py          # DataFrames, Bar Charts, and Pie Charts
 │   ├── mat_excersice_1.py              # Ultrasonic Sensor Calibration Curve
 │   ├── mat_excersice_2.py              # Transit Demand Dashboard (Subplots)
-│   └── mat_excersice_3.py              # Autonomous Robot Trajectory Map 
+│   └── mat_excersice_3.py              # Autonomous Robot Trajectory Map
 │
 └── 📁 Num_Mat_excersice/               # 🏆 Capstone Project
     ├── Num_Mat_excersice.py            # 24-Hour Hardware Thermal Simulation
     └── thermal_profile_export.png      # High-Res Output Graphic
+```
 
-🚀 Core Modules & Progression
+</details>
 
-Phase 1: Python Fundamentals & OOP
+---
 
-Focused on mastering standard Python syntax, control flow, and Object-Oriented Programming (OOP).
+## 🚀 Core Modules & Progression
 
-Highlights: Built a persistent Command-Line Interface (CLI) Contact Book that reads/writes to contacts.txt, and a My_Account class simulating secure banking transactions.
+| Phase | Focus Area | Key Outcome |
+|---|---|---|
+| Phase 1 | Python Fundamentals & OOP | Built CLI persistence and object models for banking & contact management |
+| Phase 2 | NumPy Vectorization | Developed sensor noise filters and occupancy grid math without loops |
+| Phase 3 | Matplotlib Visualization | Produced engineering dashboards and trajectory analytics |
+| Capstone | Thermal Simulation & Export | Simulated 24-hour thermal telemetry, smoothed noisy data, and exported a PNG dashboard |
 
-Phase 2: Vectorized Mathematics (NumPy)
+---
 
-Transitioned from standard for loops to high-performance array operations, a critical skill for processing high-frequency sensor data.
+## 📊 Capstone Highlight: Hardware Thermal Profile
 
-1D Noise Filter (excersice_1.py): Utilized boolean masking to eliminate impossible sensor glitches and np.convolve to apply a sliding window average.
+This capstone is the visual signature of the repository. It combines NumPy-driven signal synthesis with Matplotlib dashboard construction to make thermal telemetry instantly interpretable.
 
-2D Occupancy Grid Simulator (excersice_2.py): Utilized array broadcasting to instantly calculate the Euclidean distance from a robot to all nearby obstacles without a single loop.
+- 1,440-minute baseline temperature profile using a sine wave model
+- Gaussian noise injection with `np.random.normal` to mimic real sensor error
+- Smoothed trendline via `np.convolve`
+- Absolute max/min detection with `np.argmax`/`np.argmin`
+- Exported as a presentation-ready PNG graphic
 
-Phase 3: Spatial & Temporal Visualization (Matplotlib)
+<div align="center">
+  <a href="Num_Mat_excersice/thermal_profile_export.png" target="_blank">
+    <img src="Num_Mat_excersice/thermal_profile_export.png" alt="Thermal Profile Graph" width="900" style="border:1px solid #ddd; border-radius:12px; box-shadow: 0 10px 30px rgba(0,0,0,0.12);" />
+  </a>
+  <p style="font-size:0.95rem; color:#666; max-width:760px; margin:auto;">Embedded thermal profile dashboard generated by <code>Num_Mat_excersice/Num_Mat_excersice.py</code>.</p>
+</div>
 
-Focused on translating raw matrices into readable engineering dashboards.
+---
 
-Trajectory Map (mat_excersice_3.py): Mapped out an autonomous robot's trajectory on a 1:1 aspect ratio coordinate plane, linking waypoint colors to velocity telemetry data and annotating sharp turns.
+## ⚙️ How to Run
 
-Transit Dashboard (mat_excersice_2.py): Utilized object-oriented Matplotlib (fig, ax = plt.subplots()) to create multi-panel dashboards visualizing network fluctuations.
+1. Clone the repository.
+2. Install dependencies:
+   ```bash
+   pip install numpy matplotlib pandas
+   ```
+3. Run the capstone script:
+   ```bash
+   python "Num_Mat_excersice/Num_Mat_excersice.py"
+   ```
 
-📊 Capstone Highlight: Hardware Thermal Profile
+---
 
-(Found in Num_Mat_excersice/Num_Mat_excersice.py)
+## 💡 Why This Repository Matters
 
-A comprehensive script synthesizing both NumPy and Matplotlib. It simulates a 24-hour thermal profile for an onboard hardware motor:
+This repository is more than practice code; it is a curated trajectory from basic Python to robotics-aware data analysis. The files show how to move from syntax to sensor fusion, then into polished visual storytelling for engineering teams.
 
-- Generates 1,440 minutes of baseline temperature data using a mathematical sine wave
-- Injects randomized Gaussian noise (np.random.normal) to simulate hardware sensor inaccuracy
-- Overlays a cleaned, smoothed trendline using 1D convolution
-- Programmatically identifies and highlights the absolute thermal limits (Max/Min) using np.argmax
-- Exports a professional, presentation-ready PNG dashboard
+---
 
-⚙️ How to Run
-
-- Clone this repository to your local machine.
-- Ensure you have the required engineering libraries installed:
-  pip install numpy matplotlib pandas
-- Navigate to the desired folder and run the scripts via terminal. For example:
-  python "Num_Mat_excersice/Num_Mat_excersice.py"
-
-Designed and built by Rahul Choudhary as part of the journey to mastering autonomous systems.
+<p align="center">Designed and built by <strong>Rahul Choudhary</strong> as part of the journey to mastering autonomous systems.</p>
